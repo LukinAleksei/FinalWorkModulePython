@@ -47,10 +47,10 @@ class YaUploader:
             time.sleep(1)
 
 
-# if __name__ == '__main__':
-#     path_to_file = 'text.txt'
-#     new_folder = input()
-#     uploader = YaUploader(get_token())
-#     uploader.create_folder(new_folder)
-#     uploader.upload_url(new_folder, path_to_file)
-# uploader = YaUploader(get_ya_token())
+if __name__ == '__main__':
+    path_to_file = 'text.txt'
+    new_folder = input()
+    uploader = YaUploader(get_ya_token())
+    uploader.create_folder(new_folder)
+    uploader.upload_url(new_folder, path_to_file)
+

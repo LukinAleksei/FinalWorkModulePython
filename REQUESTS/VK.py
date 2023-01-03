@@ -52,10 +52,10 @@ class VkApiClient:
         return requests.get(f'{self.base_url}/groups.getById',
                             params={**params, **self.general_parameters()}).json()['response']
 
-    def get_profiles_photo(self, owner_id: str, count: int = 1):
+    def get_profiles_photo(self, owner_id: str, count: int = 1, album_id: str = 'profile'):
         params = {
             'owner_id': owner_id,
-            'album_id': 'profile',
+            'album_id': album_id,
             'rev': '0',
             'extended': 'likes',
             'count': count
@@ -64,9 +64,10 @@ class VkApiClient:
                             params={**params, **self.general_parameters()}).json()['response']['items']
 
 
-# vk_client = VkApiClient(token=get_vk_token(), api_version='5.131')
-# pprint(vk_client.get_users_info(user_ids='1335817', fields='counters'))
-# pprint(vk_client.get_profiles_photo(owner_id='1335817'))
+if __name__ == '__main__':
+    vk_client = VkApiClient(token=get_vk_token(), api_version='5.131')
+    pprint(vk_client.get_users_info(user_ids='1335817', fields='counters'))
+    pprint(vk_client.get_profiles_photo(owner_id='1335817'))
 
 
 
