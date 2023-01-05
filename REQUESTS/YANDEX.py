@@ -42,7 +42,7 @@ class YaUploader:
 
     def upload_url(self, folder: str, photo_vk: dict):
         for name, url in tqdm(photo_vk.items()):
-            params = {'path': f'{folder}/{name}', 'url': url}
+            params = {'path': f'{folder}/{name}.jpg', 'url': url}
             post(f'{self.url}/upload', params=params, headers=self.headers)
             time.sleep(1)
 

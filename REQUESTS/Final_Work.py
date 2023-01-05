@@ -29,3 +29,6 @@ for photo_data in photo_list:
 #
 # ya_disk = YANDEX.YaUploader(token=YANDEX.get_ya_token())
 # ya_disk.upload_url(ya_disk.create_folder('PhotoVK'), upload_dict)
+
+google_disk = GOOGLE.GoogleUploader()
+google_disk.upload_file(google_disk.create_new_folder('PhotoVK'), upload_dict)
