@@ -6,7 +6,7 @@ from tqdm import tqdm
 
 def get_ya_token():
     with open('tokenYANDEX.txt', 'r') as token_file:
-        return token_file.readline()
+        return token_file.readline().strip()
 
 
 class YaUploader:

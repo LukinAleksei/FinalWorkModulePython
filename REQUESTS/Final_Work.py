@@ -1,10 +1,11 @@
 import YANDEX
 import VK
+import GOOGLE
 import json
 from pprint import pprint
 
 vk_client = VK.VkApiClient(token=VK.get_vk_token(), api_version='5.131')
-photo_list = vk_client.get_profiles_photo(owner_id='1335817', count=5)
+photo_list = vk_client.get_photo(owner_id='1335817', count=5)
 upload_dict = {}
 json_list = []
 url_value = ''
@@ -22,9 +23,9 @@ for photo_data in photo_list:
     json_list.append(json_dict)
 
 
-with open('photo_file_info', 'w') as catalog_variable:
-    write_dict = json.dumps(json_list)
-    catalog_variable.write(write_dict)
-
-ya_disk = YANDEX.YaUploader(token=YANDEX.get_ya_token())
-ya_disk.upload_url(ya_disk.create_folder('PhotoVK'), upload_dict)
+# with open('photo_file_info', 'w') as catalog_variable:
+#     write_dict = json.dumps(json_list)
+#     catalog_variable.write(write_dict)
+#
+# ya_disk = YANDEX.YaUploader(token=YANDEX.get_ya_token())
+# ya_disk.upload_url(ya_disk.create_folder('PhotoVK'), upload_dict)
